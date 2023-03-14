@@ -17,12 +17,12 @@ def create_copy_docx(start_file: str) -> None:
 
 
 def main():
-    try:
-        names_docs = sorted(glob.glob('*.docx'))[-1]
-        create_copy_docx(start_file=names_docs)
-    except IndexError:
-        print('[!] No file')
-        print()
+    names_docs = sorted(glob.glob('*.docx'))
+    if not names_docs:
+        print('[!] No File!')
+        input()
+    else:
+        create_copy_docx(start_file=names_docs[-1])
 
 
 if __name__ == '__main__':
