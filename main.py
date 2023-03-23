@@ -8,6 +8,9 @@ from docx import Document
 
 
 def create_copy_docx(start_file: str) -> None:
+    """
+    Создает копию документа, с текущей датой.
+    """
     doc = Document(docx=start_file)
 
     pattern = '%d.%m.%Y'
